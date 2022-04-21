@@ -9,6 +9,7 @@ function App() {
     <div className="App">
         <NavBar/>
         <ItemListContainer title="Productos destacados"/>
+        <ItemListContainer title="Ofertas del mes"/>
     </div>
   );
 }
