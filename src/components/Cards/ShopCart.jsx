@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-function ShopCart({item,stock}) {
+function ShopCart({item,stock,imgsrc}) {
   let [itemCount, setCount] = useState(0);
 
   function useAddItem (){
@@ -17,7 +17,7 @@ function ShopCart({item,stock}) {
   return (
     <div>
         <h4>{item}</h4>
-        <img src='' alt="Item Image"/>
+        <img src={imgsrc} alt="Item Image"/>
         <div>
           <button onClick={()=>setCount((itemCount>0 ? itemCount-1 : itemCount=0))}> - </button>
           <span>{itemCount}</span>

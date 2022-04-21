@@ -1,0 +1,18 @@
+{
+  "clothes": [
+    {
+      "name": "Pantalon001",
+      "src": "../resources/img/pantalon001.jpg"
+    },
+    {
+      "name": "Pantalon002",
+      "src": "../resources/img/pantalon002.jpg"
+    },{
+      "name": "Pantalon003",
+      "src": "../resources/img/pantalon003.jpg"
+    },{
+      "name": "Pantalon004",
+      "src": "../resources/img/pantalon004.jpg"
+    }
+  ]
+}
