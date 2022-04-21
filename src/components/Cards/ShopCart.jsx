@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
 function ShopCart({item,stock}) {
-  const [itemCount, setCount] = useState(0);
+  let [itemCount, setCount] = useState(0);
 
   function useAddItem (){
+
   if (itemCount< stock && itemCount> 0){
-    alert(item+"agregado correctamente")
+    alert(item+" agregado correctamente")
   } else if (itemCount == 0){
     alert("No ha seleccionado productos")
   } else {
