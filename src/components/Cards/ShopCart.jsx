@@ -15,15 +15,15 @@ function ShopCart({item,stock,imgsrc}) {
 }
 
   return (
-    <div>
+    <div className='shop-card'>
         <h4>{item}</h4>
-        <img src={imgsrc} alt="Item Image"/>
-        <div>
+        <img className='card-img' src={imgsrc} alt="Item Image"/>
+        <div className='card-btns'>
           <button onClick={()=>setCount((itemCount>0 ? itemCount-1 : itemCount=0))}> - </button>
           <span>{itemCount}</span>
           <button onClick={()=>setCount((itemCount<stock ? itemCount+1 : itemCount=itemCount))} > + </button>
-        </div>
         <button onClick={useAddItem}>Agregar al Carrito</button>
+        </div>
     </div>
   );
 }

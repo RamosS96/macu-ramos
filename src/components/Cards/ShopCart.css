@@ -1,0 +1,25 @@
+.card-img {
+  height: 250px;
+  margin: 0px 25px;
+  width: 250px;
+}
+.shop-card {
+  border: solid 4px red;
+  display: inline-flex;
+  margin: 15px 15px;
+  width: 300px;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h4 {
+  display: inline-block;
+  width: 100%;
+}
+.card-btns {
+  display: inline-block;
+  margin: 15px 15px;
+}
+button {
+  margin: 0px 15px;
+}
