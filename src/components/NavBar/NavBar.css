@@ -2,7 +2,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    padding: 0;
+    margin: 0;
 }
 
 ul div {
@@ -10,15 +11,52 @@ ul div {
 }
 
 li {
-    border: 2px solid blue;
+
     color: brown;
     display: inline-block;
-    margin: 10px 10px;
-    padding: 10px 5px;
-} 
-li a {
-    text-decoration: none;
+    margin: 5px 5px;
+    padding: 2px 2px;
 }
+
+li a {
+    border: 2px solid blue;
+    text-decoration: none;
+
+}
+
+nav {
+    background-color: bisque;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .cart-icon {
     font-size: 40px;
+}
+
+.nav-img {
+    height: 50px;
+    width: 50px;
+}
+
+.cart-container {
+    position: relative;
+}
+
+.cart-span {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+    
 }

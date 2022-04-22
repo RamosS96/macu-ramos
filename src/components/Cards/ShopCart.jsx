@@ -42,7 +42,7 @@ function ShopCart({producto, stock, src}) {
           <button onClick={()=>setCount((itemCount>0 ? itemCount-1 : itemCount=0))}> - </button>
           <span>{itemCount}</span>
           <button onClick={()=>setCount((itemCount<stock ? itemCount+1 : itemCount=itemCount))} > + </button>
-        <button onClick={useAddItem}>Agregar al Carrito</button>
+        {<ButtonAddCart content={"Agregar al Carrito" } fn={useAddItem}/> }
         </div>
     </div>
   );

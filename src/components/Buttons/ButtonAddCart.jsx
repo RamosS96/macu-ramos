@@ -1,8 +1,9 @@
 import React from 'react';
+import './ButtonAddCart.css';
 
-function ButtonAddCart({content}) {
+function ButtonAddCart({content, fn}) {
   return (
-    <button >
+    <button className='btn-add-cart' onClick={fn}>
         {content}
     </button>
   );

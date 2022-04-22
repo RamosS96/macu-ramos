@@ -5,11 +5,13 @@
   max-width: 200px;
 }
 .shop-card {
-  border: solid 4px red;
-  display: inline-flex;
-  margin: 15px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+  height: 350px;
   width: 250px;
-  height: auto;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
 }
