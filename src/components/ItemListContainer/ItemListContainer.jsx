@@ -9,29 +9,30 @@ function ItemListContainer({ title }) {
         {
             name: "Pantalon001",
             src: Pantalon001,
-            stock:"5"
+            stock:"5",
+            id: "001"
         },
         {
             name: "Pantalon002",
             src: Pantalon002,
-            stock:"5"
+            stock:"5",
+            id: "002"
         }, {
             name: "Pantalon003",
             src: Pantalon003,
-            stock:"5"
+            stock:"5",
+            id: "003"
         }, {
             name: "Pantalon004",
             src: Pantalon004,
-            stock:"5"
+            stock:"5",
+            id: "004"
         }
       ];
     return (
         <div>
-            <h1>{title}</h1>
-            <ShopCart stock="4" producto={productos[0] } />
-            <ShopCart stock="4" producto={productos[1] } />
-            <ShopCart stock="5" producto={productos[2] } />
-            <ShopCart stock="4" producto={productos[3] } />
+            <h1>{title} ({productos.length}) </h1>
+            {productos.map((u) => <ShopCart producto={u.name} key={u.id} stock={u.stock} src={u.src}></ShopCart> )}
         </div>
     );
 }
