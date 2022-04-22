@@ -4,13 +4,15 @@ import NavBar from './components/NavBar/NavBar';
 import './components/NavBar/NavBar.css';
 import './components/Cards/ShopCart.css';
 
+
+
 function App() {
   return (
     <div className="App">
         <NavBar/>
-        <ItemListContainer product1="Pantalon" product2="Remera" title="Productos destacados"/>
+        <ItemListContainer title="Productos destacados"/>
         
-        <ItemListContainer product1="Calza" product2="Short" title="Ofertas del mes"/>
+        <ItemListContainer title="Ofertas del mes"/>
     </div>
   );
 }

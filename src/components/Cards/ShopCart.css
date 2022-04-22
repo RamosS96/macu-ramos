@@ -1,13 +1,14 @@
 .card-img {
-  height: 250px;
-  margin: 0px 25px;
-  width: 250px;
+  height: 150px;
+  margin: 0px 5px;
+  width: 100%;
+  max-width: 200px;
 }
 .shop-card {
   border: solid 4px red;
   display: inline-flex;
   margin: 15px 15px;
-  width: 300px;
+  width: 250px;
   height: auto;
   flex-wrap: wrap;
   justify-content: center;
