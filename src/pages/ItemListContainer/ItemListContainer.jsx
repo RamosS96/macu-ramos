@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import ShopCart from "../../components/Cards/ShopCart";
 import Pantalon001 from "../../resources/img/Pantalon001.jpg";
 import Pantalon002 from "../../resources/img/Pantalon002.jpg";
@@ -33,6 +34,10 @@ function ItemListContainer({ title }) {
             description: "Pantalon"
         }
       ];
+
+const {categoryID} = useParams();
+      console.log(categoryID);
+
     return (
         <div>
             <h1>{title} ({productos.length}) </h1>

@@ -48,7 +48,8 @@ function ShopCart({ producto, stock, src, all }) {
         {<ButtonAddCart content={"Ver detalles"} fn={() => {
           MySwal.fire({
             title: `${all.name}`,
-            html: <ItemDetail props={all} /> 
+            html: <ItemDetail item={all} /> ,
+            width: 400,
           })
         }} />}
       </div>

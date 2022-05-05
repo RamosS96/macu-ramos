@@ -1,15 +1,17 @@
 import React from 'react';
 
-function ItemDetail({props}) {
+
+function ItemDetail({item}) {
     return (
         <>
-         <div className='img-itemDetail'>
-            <img src={props.src} alt='img detail'/>
+         <div className='img-detailContainer'>
+            <img className='img-itemDetail' src={item?.src} alt='img detail'/>
          </div>
          <div className='itemDetail-container'>
-            <h4>{props.name}</h4>
-            <p>{props?.description}</p>
-            <span>{props.price}</span>
+            <h4>{item?.name}</h4>
+            <p>{item?.description}</p>
+            <span>{item?.price}</span>
+
          </div>     
         </>
     );
