@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-function ItemDetail({item}) {
+function ItemDetailMini({item}) {
     return (
         <>
          <div className='img-detailContainer'>
@@ -11,10 +12,10 @@ function ItemDetail({item}) {
             <h4>{item?.name}</h4>
             <p>{item?.description}</p>
             <span>{item?.price}</span>
-
+            
          </div>     
         </>
     );
 }
 
-export default ItemDetail;
+export default ItemDetailMini;
