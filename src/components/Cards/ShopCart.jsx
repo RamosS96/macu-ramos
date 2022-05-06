@@ -3,6 +3,7 @@ import ButtonAddCart from '../Buttons/ButtonAddCart';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { Link } from 'react-router-dom';
 
 const MySwal = withReactContent(Swal)
 
@@ -45,13 +46,13 @@ function ShopCart({ producto, stock, src, all }) {
         <span>{itemCount}</span>
         <button onClick={() => setCount((itemCount < stock ? itemCount + 1 : itemCount = itemCount))} > + </button>
         {<ButtonAddCart content={"Agregar al Carrito"} fn={useAddItem} />}
-        {<ButtonAddCart content={"Ver detalles"} fn={() => {
+        {<Link to={`/item/${all.id}`} ><ButtonAddCart content={"Ver detalles"} fn={() => {
           MySwal.fire({
             title: `${all.name}`,
             html: <ItemDetail item={all} /> ,
             width: 400,
           })
-        }} />}
+        }} /></Link>}
       </div>
     </div>
   );
