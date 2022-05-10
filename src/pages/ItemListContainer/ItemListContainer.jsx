@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ShopCart from "../../components/Cards/ShopCart";
+import ShopCard from "../../components/Cards/ShopCard";
 import Pantalon001 from "../../resources/img/Pantalon001.jpg";
 import Pantalon002 from "../../resources/img/Pantalon002.jpg";
 import Pantalon003 from "../../resources/img/Pantalon003.jpg";
@@ -41,7 +41,7 @@ const {categoryID} = useParams();
     return (
         <div>
             <h1>{title} ({productos.length}) </h1>
-            {productos.map((u) => <ShopCart producto={u.name} key={u.id} stock={u.stock} src={u.src} all={u}/>)}
+            {productos.map((u) => <ShopCard item={u}/>)}
         </div>
     );
 }

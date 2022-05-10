@@ -1,0 +1,14 @@
+.img-itemDetail {
+  display: inline-block;
+  padding-top: 30px;
+  width: 250px;
+}
+.img-detailContainer {
+  display: inline-block;
+  width: 50%;
+}
+.itemDetail-container {
+  display: inline-block;
+  place-items: center stretch;
+  width: 50%;
+}

@@ -1,14 +1,14 @@
+
 import React, { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
 
-function ItemDetail({item}) {
+function ItemDetailMini({item}) {
     const [quantityProducts, setQuantityToAdd] = useState();
 
     function addHandler(quantityToAdd){
         setQuantityToAdd(quantityToAdd);
     }
-
 
     return (
         <>
@@ -19,10 +19,12 @@ function ItemDetail({item}) {
             <h4>{item?.name}</h4>
             <p>{item?.description}</p>
             <span>{item?.price}</span>
-            <ItemCount initial={0} stock={item?.stock} onAdd={addHandler}></ItemCount>
+
+            <ItemCount initial={0} stock={item?.stock} onAdd={addHandler}></ItemCount>          
+
          </div>     
         </>
     );
 }
 
-export default ItemDetail;
+export default ItemDetailMini;
