@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 function ItemDetail({item}) {
+    const [quantityProducts, setQuantityToAdd] = useState();
+
+    function addHandler(quantityToAdd){
+        setQuantityToAdd(quantityToAdd);
+    }
+
+
     return (
         <>
          <div className='img-detailContainer'>
@@ -11,7 +19,7 @@ function ItemDetail({item}) {
             <h4>{item?.name}</h4>
             <p>{item?.description}</p>
             <span>{item?.price}</span>
-
+            <ItemCount initial={0} stock={item?.stock} onAdd={addHandler}></ItemCount>
          </div>     
         </>
     );
