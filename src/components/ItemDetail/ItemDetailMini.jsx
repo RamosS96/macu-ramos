@@ -4,11 +4,14 @@ import ItemCount from '../ItemCount/ItemCount';
 
 
 function ItemDetailMini({item}) {
-    const [quantityProducts, setQuantityToAdd] = useState();
+    const [quantityProducts, setQuantityToAdd] = useState(null);
+    
 
     function addHandler(quantityToAdd){
         setQuantityToAdd(quantityToAdd);
-    }
+    };
+
+  
 
     return (
         <>
@@ -19,7 +22,7 @@ function ItemDetailMini({item}) {
             <h4>{item?.name}</h4>
             <p>{item?.description}</p>
             <span>{item?.price}</span>
-
+            
             <ItemCount initial={0} stock={item?.stock} onAdd={addHandler}></ItemCount>          
 
          </div>     

@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 
 function ItemCount({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial);
+    const btnAddToCart = document.getElementById('addToCart');
+    const btnShowCart = document.getElementById('showCart');
+
+
+    btnAddToCart.addEventListener("click", ()=> {
+        btnAddToCart.classList = 'hide';
+        btnShowCart.classList = '';
+    })
 
     function handleAddButton() {
         if (count < stock) {
@@ -23,7 +31,8 @@ function ItemCount({ stock, initial, onAdd }) {
                 <input readOnly value={count} />
                 <button onClick={() => handleAddButton()}>+</button>
             </div>
-            <button onClick={() => (count <= stock) && onAdd(count)}>Agregar al carrito</button>
+            <button className='hide' id='showCart'>Ver ({count}) elementos en el carrito carrito</button>
+            <button id='addToCart' onClick={() => (count <= stock) && onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 }

@@ -12,3 +12,6 @@
   place-items: center stretch;
   width: 50%;
 }
+.hide {
+  display: none;
+}
