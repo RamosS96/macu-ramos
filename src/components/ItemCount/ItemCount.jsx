@@ -7,10 +7,10 @@ function ItemCount({ stock, initial, onAdd }) {
     const btnShowCart = document.getElementById('showCart');
 
 
-    btnAddToCart.addEventListener("click", ()=> {
-        btnAddToCart.classList = 'hide';
-        btnShowCart.classList = '';
-    })
+    // btnAddToCart.addEventListener("click", ()=> {
+    //     btnAddToCart.classList = 'hide';
+    //     btnShowCart.classList = '';
+    // })
 
     function handleAddButton() {
         if (count < stock) {
@@ -32,7 +32,10 @@ function ItemCount({ stock, initial, onAdd }) {
                 <button onClick={() => handleAddButton()}>+</button>
             </div>
             <button className='hide' id='showCart'>Ver ({count}) elementos en el carrito carrito</button>
-            <button id='addToCart' onClick={() => (count <= stock) && onAdd(count)}>Agregar al carrito</button>
+            <button id='addToCart' onClick={() => {(count <= stock) && onAdd(count);
+                                                    btnAddToCart.classList = 'hide';
+                                                    btnShowCart.classList = '';
+            }}>Agregar al carrito</button>
         </div>
     )
 }
