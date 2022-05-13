@@ -1,47 +1,48 @@
 import { useParams } from "react-router-dom";
 import ShopCard from "../../components/Cards/ShopCard";
-import Pantalon001 from "../../resources/img/Pantalon001.jpg";
-import Pantalon002 from "../../resources/img/Pantalon002.jpg";
-import Pantalon003 from "../../resources/img/Pantalon003.jpg";
-import Pantalon004 from "../../resources/img/Pantalon004.jpg";
+import { initializeApp } from "firebase/app";
+import { collection, query, getDocs, getFirestore } from 'firebase/firestore';
+import { useEffect, useState } from "react";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDBVA0d5eVRdLbiZ73c9rnVvdzxedAw7v4",
+    authDomain: "macu-app-sr.firebaseapp.com",
+    projectId: "macu-app-sr",
+    storageBucket: "macu-app-sr.appspot.com",
+    messagingSenderId: "1042740416483",
+    appId: "1:1042740416483:web:d848412c2b6da7b63a1ad6",
+    measurementId: "G-PXBC978P1D"
+  };
+  
+  initializeApp(firebaseConfig);
+const db = getFirestore();
+
+async function getProducts(){
+    
+    const itemCollection = collection(db, 'items');
+    const itemSnapshot = await getDocs(itemCollection);
+    const itemList = itemSnapshot.docs.map(doc => {return {...doc.data(), id: doc.id}})
+
+    return itemList;
+    
+}
 
 function ItemListContainer({ title }) {
-    const productos = [
-        {
-            name: "Pantalon001",
-            src: Pantalon001,
-            stock:"5",
-            id: "001",
-            description: "Pantalon"
-        },
-        {
-            name: "Pantalon002",
-            src: Pantalon002,
-            stock:"5",
-            id: "002",
-            description: "Pantalon"
-        }, {
-            name: "Pantalon003",
-            src: Pantalon003,
-            stock:"5",
-            id: "003",
-            description: "Pantalon"
-        }, {
-            name: "Pantalon004",
-            src: Pantalon004,
-            stock:"5",
-            id: "004",
-            description: "Pantalon"
-        }
-      ];
+ const [productos, setProductos] = useState();
+ const {categoryID} = useParams();
 
-const {categoryID} = useParams();
-      console.log(categoryID);
+useEffect(()=>{ 
+    getProducts()
+    .then(res => setProductos(res));
+    
+},[categoryID]
+)
+console.log(productos)
 
     return (
         <div>
-            <h1>{title} ({productos.length}) </h1>
-            {productos.map((u) => <ShopCard item={u}/>)}
+             { <h1>{title} </h1>}
+            {productos.map((u) => <ShopCard item={u}/>)}  
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import {Link} from 'react-router-dom';
 
 function ItemCount({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial);
@@ -31,10 +31,11 @@ function ItemCount({ stock, initial, onAdd }) {
                 <input readOnly value={count} />
                 <button onClick={() => handleAddButton()}>+</button>
             </div>
-            <button className='hide' id='showCart'>Ver ({count}) elementos en el carrito carrito</button>
-            <button id='addToCart' onClick={() => {(count <= stock) && onAdd(count);
-                                                    btnAddToCart.classList = 'hide';
-                                                    btnShowCart.classList = '';
+            <Link to={'/cart'}><button className='hide' id='showCart'>Ver ({count}) elementos en el carrito carrito</button></Link>
+            <button id='addToCart' onClick={() => {
+                (count <= stock) && onAdd(count);
+                btnAddToCart.classList = 'hide';
+                btnShowCart.classList = '';
             }}>Agregar al carrito</button>
         </div>
     )
