@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
+import { CartContextProvider } from './resources/cart-context';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDBVA0d5eVRdLbiZ73c9rnVvdzxedAw7v4",
@@ -22,7 +23,9 @@ initializeApp(firebaseConfig);
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <CartContextProvider>
     <App />
+    </CartContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

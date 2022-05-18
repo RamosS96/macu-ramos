@@ -39,7 +39,7 @@ function ShopCart({ item }) {
   return (
     <div className='shop-card'>
       <h4>{item.name}</h4>
-      <img className='card-img' src={item.src} alt="Item" />
+      <img className='card-img' src={item.url} alt="Item" />
       <div className='card-btns'>
         <button onClick={() => setCount((itemCount > 0 ? itemCount - 1 : itemCount = 0))}> - </button>
         <span>{itemCount}</span>

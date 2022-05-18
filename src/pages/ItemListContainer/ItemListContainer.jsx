@@ -3,7 +3,7 @@ import ShopCard from "../../components/Cards/ShopCard";
 import { collection, query, getDocs, getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from "react";
 
-function getProducts(){
+const getProducts = () => {
     const db = getFirestore();
     const productCollection = collection(db, 'items');
 

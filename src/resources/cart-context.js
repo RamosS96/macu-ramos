@@ -18,6 +18,7 @@ export const CartContextProvider = ({ children }) => {
 
   const removeProductCart = (product) => {
     const itemToRemove = cartList.findIndex(item => item.id === product.id);
+    
     (itemToRemove !== -1) && setCartList(cartList.filter(i => i.id !== product.id))
   };
 
