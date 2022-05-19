@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import {Link} from 'react-router-dom';
 
+
 function ItemCount({ stock, onAdd }) {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const btnAddToCart = document.getElementById('addToCart');
     const btnShowCart = document.getElementById('showCart');
-
+    
     
 
     function handleAddButton() {

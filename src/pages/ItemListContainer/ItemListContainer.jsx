@@ -33,7 +33,7 @@ useEffect(()=>{
     return (
         <div>
              { <h1>{title} </h1>}
-            {productos.map((u) => <ShopCard item={u}/>)}  
+            {productos.map((u) => <ShopCard item={u} key={u.id}/>)}  
         </div>
     );
 }

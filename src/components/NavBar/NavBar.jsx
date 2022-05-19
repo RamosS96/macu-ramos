@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <nav>
             <ul>
-                <li><img className='nav-img' src={imgLogo} alt='logo'/></li>
+                <li><Link to={'/'}><img className='nav-img' src={imgLogo} alt='logo'/></Link></li>
                 <div>
                 <li><Link to={'/products'}><a href='index.html'>Productos</a></Link></li>
                 <li><Link to={'/contact'}><a href='index.html'>Contacto</a></Link></li>
